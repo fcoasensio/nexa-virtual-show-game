@@ -23,8 +23,8 @@
   --border-glow: rgba(0,229,255,0.25);
   --gradient-main: linear-gradient(135deg, var(--cyan), var(--magenta));
   --gradient-alt: linear-gradient(135deg, var(--purple), var(--cyan));
-  --font-head: 'Montserrat', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-head: 'Orbitron', sans-serif;
+  --font-body: 'Orbitron', sans-serif;
   --radius: 16px;
   --radius-sm: 8px;
   --shadow-glow: 0 0 40px rgba(0,229,255,0.15);
@@ -38,16 +38,18 @@ body {
   font-family: var(--font-body);
   background: var(--bg-dark);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.75;
   overflow-x: hidden;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
 }
 
 /* ---- TYPOGRAPHY ---- */
-h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 900; line-height: 1.15; }
-h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
-h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
-p { font-size: 1rem; color: var(--text-secondary); }
+h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1.2; letter-spacing: 0.03em; }
+h1 { font-size: clamp(1.9rem, 5vw, 3.8rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.6rem); }
+h3 { font-size: clamp(0.85rem, 1.5vw, 1.1rem); font-weight: 700; letter-spacing: 0.05em; }
+p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8; }
 strong { color: var(--text-primary); }
 
 .gradient-text {
@@ -747,7 +749,7 @@ strong { color: var(--text-primary); }
   line-height: 0.5;
   color: var(--cyan);
   opacity: 0.3;
-  font-family: Georgia, serif;
+  font-family: 'Orbitron', sans-serif;
   margin-bottom: 16px;
 }
 
@@ -1545,7 +1547,7 @@ strong { color: var(--text-primary); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 18%;
   display: block;
 }
 
