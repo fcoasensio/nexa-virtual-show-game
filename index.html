@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXA – Virtual Show Game | El Show Interactivo</title>
+  <meta name="description" content="NEXA Virtual Show Game: el concurso interactivo tipo TV donde tu equipo compite en tiempo real dirigido por una IA. Reserva ahora para cumpleaños, colegios y empresas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-nexa">NEXA</span>
+        <span class="logo-sub">VIRTUAL SHOW GAME</span>
+      </div>
+      <div class="nav-links">
+        <a href="#que-es">Qué es</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#para-quien">Para quién</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#reserva" class="btn-nav">Reservar ahora</a>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#que-es" class="mobile-link">Qué es</a>
+      <a href="#como-funciona" class="mobile-link">Cómo funciona</a>
+      <a href="#para-quien" class="mobile-link">Para quién</a>
+      <a href="#faq" class="mobile-link">FAQ</a>
+      <a href="#reserva" class="btn-mobile-cta">Reservar ahora</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO FULLSCREEN IMAGE ===== -->
+  <div class="hero-fullscreen-img">
+    <img src="img_cover.webp" alt="NEXA Virtual Show Game – Plató principal" />
+    <div class="hero-fullscreen-overlay">
+      <div class="hf-badge"><span class="badge-dot"></span>EN VIVO · INTERACTIVO · ÉPICO</div>
+      <h1 class="hf-title">No es un juego.<br /><span class="gradient-text">Es un show.</span></h1>
+      <p class="hf-sub"><strong>15 minutos. Tu equipo. Una IA implacable.</strong><br />Solo los mejores sobreviven.</p>
+      <div class="hf-ctas">
+        <a href="#reserva" class="btn-primary"><span>Reserva tu partida ahora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#que-es" class="btn-secondary">Ver cómo funciona</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        EN VIVO · INTERACTIVO · ÉPICO
+      </div>
+      <h1 class="hero-title">
+        No es un juego.<br />
+        <span class="gradient-text">Es un show.</span><br />
+        ¿Estás listo para ganar?
+      </h1>
+      <p class="hero-subtitle">
+        Vive la tensión, las risas y la adrenalina de un concurso de televisión real.<br />
+        <strong>15 minutos. Tu equipo. Una IA implacable.</strong> Solo los mejores sobreviven.
+      </p>
+      <div class="hero-ctas">
+        <a href="#reserva" class="btn-primary">
+          <span>Reserva tu partida ahora</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#que-es" class="btn-secondary">Ver cómo funciona</a>
+      </div>
+      <p class="hero-microcopy">⚡ Plazas limitadas · Aquí no vienes a participar. Vienes a ganar.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">15–20</span>
+          <span class="stat-label">Minutos de intensidad</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">12–20</span>
+          <span class="stat-label">Jugadores por partida</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Participación real</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="tv-frame">
+        <div class="tv-screen">
+          <div class="tv-header">
+            <span class="tv-live">● LIVE</span>
+            <span class="tv-title-inner">VIRTUAL SHOW GAME</span>
+            <span class="tv-timer" id="tvTimer">00:47</span>
+          </div>
+          <div class="tv-question">
+            <p class="q-label">PREGUNTA 7 / 10</p>
+            <p class="q-text">¿En qué año llegó el hombre a la Luna?</p>
+          </div>
+          <div class="tv-teams">
+            <div class="team team-a">
+              <span class="team-name">⚡ EQUIPO A</span>
+              <div class="team-bar"><div class="team-fill fill-a" style="width:72%"></div></div>
+              <span class="team-score">720 pts</span>
+            </div>
+            <div class="team team-b">
+              <span class="team-name">🔥 EQUIPO B</span>
+              <div class="team-bar"><div class="team-fill fill-b" style="width:58%"></div></div>
+              <span class="team-score">580 pts</span>
+            </div>
+          </div>
+          <div class="tv-answers">
+            <div class="ans ans-correct">A · 1969</div>
+            <div class="ans">B · 1972</div>
+            <div class="ans">C · 1965</div>
+            <div class="ans">D · 1975</div>
+          </div>
+        </div>
+        <div class="tv-glow"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><rect x="1" y="1" width="14" height="22" rx="7" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/><circle cx="8" cy="8" r="2" fill="rgba(255,255,255,0.6)" class="scroll-dot"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== AI HOST BANNER ===== -->
+  <section class="aihost-section">
+    <div class="aihost-img-wrap">
+      <img src="img_aihost.webp" alt="NEXA – Presentador IA" class="aihost-img" />
+    </div>
+    <div class="aihost-content">
+      <div class="section-tag">EL PRESENTADOR</div>
+      <h2>Conoce a tu<br /><span class="gradient-text">anfitrión de IA</span></h2>
+      <p>No es un bot frío. Es un presentador holográfico con personalidad propia. Provoca, celebra, castiga y entretiene. Nunca se equivoca. Nunca descansa. Siempre está en modo show.</p>
+      <ul class="aihost-list">
+        <li><span class="aihost-dot"></span>Reacciona en tiempo real a cada respuesta</li>
+        <li><span class="aihost-dot"></span>Tiene humor. Y lo usa sin piedad.</li>
+        <li><span class="aihost-dot"></span>Adapta el ritmo y la dificultad al grupo</li>
+        <li><span class="aihost-dot"></span>Disponible 24/7, sin camerinos ni catering</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== QUÉ ES NEXA ===== -->
+  <section class="section section-dark" id="que-es">
+    <div class="container">
+      <div class="section-tag">EL CONCEPTO</div>
+      <h2 class="section-title">El primer concurso interactivo<br /><span class="gradient-text">dirigido por IA</span></h2>
+      <div class="que-es-grid">
+        <div class="que-es-text">
+          <p class="lead-text">Olvida los juegos de mesa aburridos y las actividades de siempre. <strong>NEXA es una experiencia inmersiva</strong> donde tú y tu equipo sois los protagonistas de un show en vivo.</p>
+          <p>Una Inteligencia Artificial con mucha personalidad dirige el juego, lanza las preguntas y juzga vuestras respuestas en tiempo real. Sin pausas. Sin errores humanos. Solo ritmo, tensión y pura competición.</p>
+          <div class="diferenciadores">
+            <div class="dif-item">
+              <div class="dif-icon">🤖</div>
+              <div>
+                <strong>IA con personalidad</strong>
+                <p>No es un bot frío. Es un presentador con carácter que reacciona, provoca y entretiene.</p>
+              </div>
+            </div>
+            <div class="dif-item">
+              <div class="dif-icon">⚡</div>
+              <div>
+                <strong>Tiempo real</strong>
+                <p>Los marcadores se actualizan al instante. Cada segundo cambia el resultado.</p>
+              </div>
+            </div>
+            <div class="dif-item">
+              <div class="dif-icon">🏆</div>
+              <div>
+                <strong>Formato equipos</strong>
+                <p>La estrategia colectiva importa tanto como el conocimiento individual.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="que-es-callout">
+          <div class="callout-card">
+            <div class="callout-quote">"</div>
+            <p class="callout-text">No hay presentador humano que se equivoque. No hay pausas. Solo ritmo rápido, luces, sonido y pura competición.</p>
+            <div class="callout-tag">LA DIFERENCIA NEXA</div>
+          </div>
+          <div class="callout-pills">
+            <span class="pill">🎯 Preguntas en tiempo real</span>
+            <span class="pill">🎬 Ambiente tipo TV</span>
+            <span class="pill">🔊 Efectos de sonido</span>
+            <span class="pill">📊 Marcadores en vivo</span>
+            <span class="pill">🤖 IA con personalidad</span>
+            <span class="pill">🏅 Competición por equipos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CÓMO FUNCIONA ===== -->
+  <section class="section section-gradient" id="como-funciona">
+    <div class="container">
+      <div class="section-tag">EL PROCESO</div>
+      <h2 class="section-title">Tu camino hacia la victoria<br /><span class="gradient-text">en 4 pasos</span></h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">👥</div>
+          <h3>Formas equipo</h3>
+          <p>Reúne a tu escuadrón. De 12 a 20 jugadores divididos en equipos listos para la batalla.</p>
+          <div class="step-tag">Preparación</div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">🧠</div>
+          <h3>Respondes preguntas</h3>
+          <p>La IA lanza los retos. Tienes segundos para decidir. La presión es real. El error, costoso.</p>
+          <div class="step-tag">Acción</div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">📊</div>
+          <h3>Compites en tiempo real</h3>
+          <p>Los marcadores se actualizan al instante. La tensión sube. Las alianzas se rompen. Nadie está a salvo.</p>
+          <div class="step-tag">Competición</div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card step-card-highlight">
+          <div class="step-number">04</div>
+          <div class="step-icon">🏆</div>
+          <h3>Ganas o pierdes</h3>
+          <p>Solo un equipo se lleva la gloria. El resto... bueno, siempre hay revancha.</p>
+          <div class="step-tag">Victoria</div>
+        </div>
+      </div>
+      <div class="steps-cta">
+        <a href="#reserva" class="btn-primary">Quiero vivir esto ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GAMEPLAY FULLWIDTH ===== -->
+  <section class="gameplay-section">
+    <div class="gameplay-img-wrap">
+      <img src="img_gameplay.webp" alt="NEXA – Equipos compitiendo en tiempo real" />
+      <div class="gameplay-overlay">
+        <div class="gameplay-badge">● LIVE 8K</div>
+        <div class="gameplay-text">
+          <p class="gameplay-label">ASÍ SE VE DESDE DENTRO</p>
+          <h2>Dos equipos.<br /><span class="gradient-text">Un ganador.</span></h2>
+          <p>Cuenta atrás. Buzzer. Tensión. La pantalla no miente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCIA VISUAL ===== -->
+  <section class="section section-dark experience-section" id="experiencia">
+    <div class="experience-bg"></div>
+    <div class="container">
+      <div class="section-tag">LA EXPERIENCIA</div>
+      <h2 class="section-title">Siente la presión<br /><span class="gradient-text">del directo</span></h2>
+      <div class="experience-grid">
+        <div class="exp-card">
+          <div class="exp-icon">⚡</div>
+          <h3>Ritmo imparable</h3>
+          <p>Sin tiempos muertos. Sin esperas. Cada ronda es más rápida que la anterior.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">😰</div>
+          <h3>Tensión real</h3>
+          <p>Cuenta atrás implacable. Efectos de sonido que te pondrán los pelos de punta.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">😂</div>
+          <h3>Risas garantizadas</h3>
+          <p>La IA tiene humor. Y cuando fallas... lo sabe. Y lo dice. Sin piedad.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">📺</div>
+          <h3>Ambiente tipo TV</h3>
+          <p>Luces de neón, marcadores en pantalla, efectos visuales. Eres el protagonista del show.</p>
+        </div>
+      </div>
+      <div class="experience-quote">
+        <blockquote>
+          "Aquí no vienes a participar.<br /><strong>Vienes a ganar."</strong>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARA QUIÉN ES ===== -->
+  <section class="section section-light" id="para-quien">
+    <div class="container">
+      <div class="section-tag">AUDIENCIAS</div>
+      <h2 class="section-title">Un formato.<br /><span class="gradient-text">Infinitas posibilidades.</span></h2>
+      <div class="audience-grid">
+        <div class="audience-card card-birthday">
+          <div class="audience-emoji">🎂</div>
+          <div class="audience-tag">CUMPLEAÑOS</div>
+          <h3>El regalo más original</h3>
+          <p>Olvida las fiestas aburridas. Convierte tu día en un evento épico que todos recordarán durante meses.</p>
+          <ul class="audience-benefits">
+            <li>✓ Experiencia única e irrepetible</li>
+            <li>✓ Perfecta para grupos de amigos</li>
+            <li>✓ Risas y competición aseguradas</li>
+            <li>✓ Personalizable con temáticas</li>
+          </ul>
+          <a href="#reserva" class="btn-audience">Reservar para cumpleaños</a>
+        </div>
+        <div class="audience-card card-school">
+          <div class="audience-emoji">🏫</div>
+          <div class="audience-tag">COLEGIOS</div>
+          <h3>Aprender nunca fue tan competitivo</h3>
+          <p>Excursiones escolares donde la diversión y el conocimiento se dan la mano. Los alumnos aprenden sin darse cuenta.</p>
+          <ul class="audience-benefits">
+            <li>✓ Repaso de contenidos gamificado</li>
+            <li>✓ Fomenta el trabajo en equipo</li>
+            <li>✓ Adaptable a cualquier nivel</li>
+            <li>✓ Preguntas personalizadas por materia</li>
+          </ul>
+          <a href="#reserva" class="btn-audience">Reservar para colegio</a>
+        </div>
+        <div class="audience-card card-business">
+          <div class="audience-emoji">🏢</div>
+          <div class="audience-tag">EMPRESAS</div>
+          <h3>Team building real</h3>
+          <p>Fomenta la colaboración, la toma de decisiones bajo presión y el espíritu de equipo de la forma más divertida que existe.</p>
+          <ul class="audience-benefits">
+            <li>✓ Rompe silos entre departamentos</li>
+            <li>✓ Decisiones bajo presión real</li>
+            <li>✓ Competitividad sana y motivadora</li>
+            <li>✓ Personalizable con cultura de empresa</li>
+          </ul>
+          <a href="#reserva" class="btn-audience">Reservar para empresa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFICIOS ===== -->
+  <section class="section section-dark" id="beneficios">
+    <div class="container">
+      <div class="section-tag">POR QUÉ NEXA</div>
+      <h2 class="section-title">Lo que te llevas<br /><span class="gradient-text">cuando sales del show</span></h2>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">🔥</div>
+          <h3>Diversión real</h3>
+          <p>Nada de sonrisas forzadas. Adrenalina pura desde el primer segundo hasta el último.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🙌</div>
+          <h3>Participación total</h3>
+          <p>Aquí nadie se queda mirando. Todos juegan, todos importan, todos pueden cambiar el resultado.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">⚔️</div>
+          <h3>Competición de verdad</h3>
+          <p>Saca tu lado más estratega. La presión del tiempo obliga a pensar rápido y decidir mejor.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">💬</div>
+          <h3>Memorable</h3>
+          <p>Una experiencia de la que hablaréis durante semanas. Ese momento que todos recuerdan.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🎯</div>
+          <h3>Sin complicaciones</h3>
+          <p>Sin instalaciones. Sin materiales. Sin preparación previa. Llegas, juegas y ganas.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🔧</div>
+          <h3>100% personalizable</h3>
+          <p>Temáticas, preguntas, idioma, dificultad. Adaptamos el show a tu grupo y tu ocasión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WINNER BANNER ===== -->
+  <section class="winner-section">
+    <div class="winner-img-wrap">
+      <img src="img_winner.jpg" alt="NEXA – Equipo ganador celebrando" />
+      <div class="winner-overlay">
+        <h2 class="winner-title">¿Serás tú el próximo<br /><span class="gradient-text">en celebrarlo?</span></h2>
+        <a href="#reserva" class="btn-primary">Reserva tu partida</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRUEBA SOCIAL ===== -->
+  <section class="section section-gradient testimonials-section" id="testimonios">
+    <div class="container">
+      <div class="section-tag">TESTIMONIOS</div>
+      <h2 class="section-title">Los que ya han<br /><span class="gradient-text">sobrevivido a NEXA</span></h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote class="testimonial-text">"Fue brutal. La IA nos vacilaba cuando fallábamos. Nos reímos muchísimo y la tensión final fue increíble. El mejor cumpleaños que he tenido en años."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-1">M</div>
+            <div>
+              <strong>Marcos R.</strong>
+              <span>24 años · Cumpleaños</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card testimonial-featured">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote class="testimonial-text">"Los alumnos no paraban de hablar de ello en el autobús de vuelta. Una forma genial de repasar temario sin que se den cuenta de que están aprendiendo."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-2">L</div>
+            <div>
+              <strong>Laura M.</strong>
+              <span>Profesora de Secundaria · Excursión escolar</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote class="testimonial-text">"Buscábamos algo diferente para el equipo de ventas y dimos en el clavo. La competitividad sana que generó fue espectacular. Lo repetiremos seguro."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-3">C</div>
+            <div>
+              <strong>Carlos D.</strong>
+              <span>HR Manager · Team Building</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-proof-bar">
+        <div class="proof-item">
+          <span class="proof-num">+500</span>
+          <span class="proof-label">Partidas jugadas</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <span class="proof-num">4.9/5</span>
+          <span class="proof-label">Valoración media</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <span class="proof-num">98%</span>
+          <span class="proof-label">Repiten la experiencia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FUERTE ===== -->
+  <section class="section cta-section" id="reserva">
+    <div class="cta-bg-anim"></div>
+    <div class="container">
+      <div class="cta-content">
+        <div class="section-tag">RESERVA AHORA</div>
+        <h2 class="cta-title">Convierte tu evento<br /><span class="gradient-text">en un concurso de TV</span></h2>
+        <p class="cta-subtitle">No dejes que te lo cuenten. Vívelo. Las plazas son limitadas y los shows se llenan rápido.</p>
+        <div class="cta-form">
+          <div class="form-group">
+            <input type="text" placeholder="Tu nombre" class="form-input" />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Tu email" class="form-input" />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Tu teléfono" class="form-input" />
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select">
+              <option value="" disabled selected>Tipo de evento</option>
+              <option>🎂 Cumpleaños</option>
+              <option>🏫 Excursión escolar</option>
+              <option>🏢 Team Building</option>
+              <option>🎉 Otro evento</option>
+            </select>
+          </div>
+          <div class="form-group form-group-full">
+            <textarea placeholder="Cuéntanos algo de tu grupo (número de personas, fecha aproximada...)" class="form-input form-textarea"></textarea>
+          </div>
+          <div class="form-group form-group-full">
+            <button type="submit" class="btn-primary btn-cta-main">
+              <span>Reserva tu partida ahora</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="cta-microcopy">🔒 Sin compromiso · Respuesta en menos de 24h · Personalización incluida</p>
+        <div class="cta-alt">
+          <p>¿Prefieres hablar primero?</p>
+          <a href="tel:+34000000000" class="btn-ghost">📞 Llámanos ahora</a>
+          <a href="https://wa.me/34000000000" class="btn-ghost btn-whatsapp">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-dark" id="faq">
+    <div class="container">
+      <div class="section-tag">PREGUNTAS FRECUENTES</div>
+      <h2 class="section-title">Dudas rápidas antes<br /><span class="gradient-text">de entrar al plató</span></h2>
+      <div class="faq-grid">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>¿Cuánto dura una partida?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Entre <strong>15 y 20 minutos</strong> de pura intensidad. Sin tiempos muertos, sin pausas. El ritmo es constante desde el primer segundo hasta el último.</p>
+          </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>¿Cuántas personas pueden jugar?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>NEXA está diseñado para grupos de <strong>12 a 20 personas</strong> divididas en equipos. El formato de equipos garantiza que todos participen activamente.</p>
+          </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>¿A partir de qué edad?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Adaptamos el nivel de dificultad. <strong>Perfecto desde los 12 años hasta los 99.</strong> Tenemos categorías de preguntas para todos los perfiles y edades.</p>
+          </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>¿Se pueden personalizar las preguntas?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>¡Por supuesto! Especialmente para <strong>empresas y colegios</strong>. Podemos adaptar las preguntas a vuestra cultura corporativa, materia escolar, temática favorita o cualquier área que queráis trabajar.</p>
+          </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>¿Necesito instalar algo?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>No. <strong>Zero instalaciones.</strong> Solo necesitáis dispositivos con navegador web (móvil, tablet u ordenador). Nosotros nos encargamos de todo lo demás.</p>
+          </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>¿Cómo reservo?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Rellena el formulario de arriba o contáctanos por teléfono o WhatsApp. <strong>Respondemos en menos de 24 horas</strong> con disponibilidad y todos los detalles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-nexa">NEXA</span>
+          <span class="logo-sub">VIRTUAL SHOW GAME</span>
+          <p>El show interactivo que convierte cualquier evento en una experiencia épica.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#que-es">Qué es NEXA</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#para-quien">Para quién</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#faq">FAQ</a>
+          <a href="#reserva">Reservar</a>
+        </div>
+        <div class="footer-cta">
+          <p>¿Listo para el show?</p>
+          <a href="#reserva" class="btn-primary">Reservar ahora</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 NEXA Virtual Show Game. Todos los derechos reservados.</p>
+        <p class="footer-tagline">No es un juego. Es un show.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
